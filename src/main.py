@@ -25,7 +25,7 @@ AI_API_KEY = os.getenv("AI_API_KEY")
 AI_BASE_URL = "https://api.openai.com/v1"
 
 
-@app.post("/canvas/{path:path}")
+@app.api_route("/canvas/{path:path}", methods=["GET", "POST", "PUT", "DELETE", "PATCH"])
 async def canvas(path: str, request: Request):
     token = request.headers.get("Authorization")
     if not token:
