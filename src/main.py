@@ -1,4 +1,8 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi import Request, HTTPException
+import os
+import httpx
 
 app = FastAPI()
 
