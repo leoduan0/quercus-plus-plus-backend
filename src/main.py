@@ -35,7 +35,7 @@ async def canvas(path: str, request: Request):
         response = await client.request(
             request.method,
             url,
-            headers={"Authorization": token},
+            headers={"Authorization": f"Bearer {token}"},
             params=dict(request.query_params),
             content=await request.body(),
         )
